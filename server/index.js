@@ -42,11 +42,11 @@ app.use(express.json());
 
 
 import userRoutes from './src/routes/user.routes.js';
+import authRoutes from './src/routes/auth.route.js';
 
 
-
-// user test route 
+// routes
 
 app.use('/api/users',userRoutes);
-
+app.use('/api/auth',authRoutes);
 
