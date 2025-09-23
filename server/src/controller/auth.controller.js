@@ -4,7 +4,7 @@ import bcrypt from "bcryptjs";
 
 
 
-export const register =async (req,res)=>{
+export const register =async (req,res , next)=>{
    
     const {userName,email,password} = req.body;  
     const hashedPassword =  bcrypt.hashSync(password,10);
@@ -20,8 +20,7 @@ export const register =async (req,res)=>{
         user:newUser,
     })  
     } catch (error) {
-       console.log(error);
-       res.status(500).json({message:'Server error' , error: error.message}); 
+            next(error);
     }
 
    
