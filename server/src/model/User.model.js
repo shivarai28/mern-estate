@@ -19,7 +19,7 @@ const userSchema = new mongoose.Schema({
     },
     avtar:{
         type:String,
-        default:"https://www.google.com/imgres?q=img&imgurl=https%3A%2F%2Fwww.k12digest.com%2Fwp-content%2Fuploads%2F2024%2F03%2F1-3-550x330.jpg&imgrefurl=https%3A%2F%2Fwww.k12digest.com%2Fimg-academy-forging-futures-at-the-pinnacle-of-sports-education%2F&docid=DhmNIDzoUrrsaM&tbnid=MbAKX_tI4Hch0M&vet=12ahUKEwjJ1L3NlPGPAxW7XmwGHcXkO7UQM3oECCAQAA..i&w=550&h=330&hcb=2&ved=2ahUKEwjJ1L3NlPGPAxW7XmwGHcXkO7UQM3oECCAQAA"
+        default:"https://images.unsplash.com/photo-1581992652564-44c42f5ad3ad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTgwOTN8MHwxfHNlYXJjaHw4fHxwcm9maWxlJTIwcGljfGVufDB8fHx8MTc1ODcxMzAxMXww&ixlib=rb-4.1.0&q=80&w=1080"
     }
 }
 ,{timestamps:true}
