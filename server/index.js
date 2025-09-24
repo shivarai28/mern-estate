@@ -1,7 +1,10 @@
 import express from 'express';
 import dotenv from 'dotenv';
 
+
 import connectDB from './dbconfig.js';
+import userRoutes from './src/routes/user.routes.js';
+import authRoutes from './src/routes/auth.route.js';
 
 
 dotenv.config();
@@ -36,9 +39,6 @@ app.use(express.json());
 // });
 
 
-
-import userRoutes from './src/routes/user.routes.js';
-import authRoutes from './src/routes/auth.route.js';
 
 
 
