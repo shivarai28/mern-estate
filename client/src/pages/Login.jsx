@@ -64,8 +64,10 @@ export default function Login() {
           </button>
      <OAuth/>
       </form>
-
-      <p className='mt-5 px-33'>Forgot Password?<Link to={'/login'} ></Link></p>
+    <div className='flex items-center justify-between '>
+      <p className='mt-5 hover:text-slate-500'><Link to={'/login'} >Forgot Password?</Link></p>
+      <p className='mt-5  hover:text-slate-500 '><Link to={'/register'} >sign up</Link></p>
+      </div>
 
       {error && <p className='text-red-600 mt-5'>{error}</p>}
     </div>
