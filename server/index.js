@@ -1,18 +1,14 @@
 import express from 'express';
 import dotenv from 'dotenv';
-import mongoose from 'mongoose';
 
+import connectDB from './dbconfig.js';
 
 
 dotenv.config();
 
 
-    mongoose.connect(process.env.MONGO_URI).then(()=>{
-        console.log('MongoDB connected');
-    }
-    ).catch((err)=>{
-        console.log('MongoDB connection error:', err);
-    }   )
+connectDB();
+
 
 
 const app = express();
@@ -24,8 +20,8 @@ app.listen(port,()=>{
 
 
 
-app.use(express.json());
 
+app.use(express.json());
 
 // test api 
 // app.get('/test',(req,res)=>{
@@ -45,9 +41,10 @@ import userRoutes from './src/routes/user.routes.js';
 import authRoutes from './src/routes/auth.route.js';
 
 
+
 // routes
 
-app.use('/api/users',userRoutes);
+app.use('/api/user',userRoutes);
 app.use('/api/auth',authRoutes);
 
 
@@ -60,7 +57,7 @@ app.use((err,req,res,next)=>{
     const message = err.message || 'Internal Server Error';
 
     return res.status(statusCode).json({
-       success :false,
+        success :false,
         statusCode,
         message,
     })
