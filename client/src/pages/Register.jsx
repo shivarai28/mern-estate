@@ -1,6 +1,7 @@
 import React, { use } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
+import OAuth from '../components/OAuth';
 
 
 export default function Register() {
@@ -64,7 +65,7 @@ export default function Register() {
         <button  disabled={loading} type='submit' className='bg-slate-700 mt-5 p-3  rounded-md hover:bg-slate-950 hover:text-white'>
      {loading ? 'Registering...' : 'Register'}
           </button>
-        <button type='submit' className='bg-slate-700  p-3  rounded-md hover:bg-slate-950 hover:text-white'>Continue with GOOGLE</button>
+      <OAuth/>
       </form>
 
       <p className='mt-5 px-33'>Already have an account?<Link to={'/login'} ><span className='text-blue-600 cursor-pointer'>Login</span></Link></p>

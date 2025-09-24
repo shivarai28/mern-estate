@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import {signInStart,signInSuccess,signInFailure } from '../redux/user/user-slice.js';
+import OAuth from '../components/OAuth.jsx';
 
 
 export default function Login() {
@@ -32,7 +33,7 @@ export default function Login() {
     });
     const data = await res.json();
     console.log(data);
-    
+
     if(data.success == false){
       dispatch(signInFailure(data.message));
       return;
@@ -61,7 +62,7 @@ export default function Login() {
         <button  disabled={loading} type='submit' className='bg-slate-700 mt-5 p-3  rounded-md hover:bg-slate-950 hover:text-white'>
      {loading ? 'Loading...' : 'Login'}
           </button>
-        <button type='submit' className='bg-slate-700  p-3  rounded-md hover:bg-slate-950 hover:text-white'>Continue with GOOGLE</button>
+     <OAuth/>
       </form>
 
       <p className='mt-5 px-33'>Forgot Password?<Link to={'/login'} ></Link></p>

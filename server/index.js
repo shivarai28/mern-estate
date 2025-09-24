@@ -1,6 +1,6 @@
 import express from 'express';
 import dotenv from 'dotenv';
-
+import cors from "cors";
 
 import connectDB from './dbconfig.js';
 import userRoutes from './src/routes/user.routes.js';
@@ -25,7 +25,7 @@ app.listen(port,()=>{
 
 
 app.use(express.json());
-
+app.use(cors());
 // test api 
 // app.get('/test',(req,res)=>{
 
